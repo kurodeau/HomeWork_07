@@ -89,7 +89,6 @@ public class HW3_2 {
 		ban = scanner.nextInt();
 		scanner.close();
 
-		int conLottoNum = 0; // 自動選號用,不要這功能可以去掉
 
 		if (ban > 9 || ban < 1) {
 			System.out.print(ban + ",這個數沒有介於1~9,重新執行一次吧");
@@ -102,100 +101,14 @@ public class HW3_2 {
 				} else {
 					System.out.print(num + ",");
 					num++;
-					conLottoNum += 1;
 				}
 			}
 			System.out.println();
 			System.out.println("以上是不包含" + ban + "的樂透數字");
-
-			int[] conLottoArray = new int[conLottoNum]; // 自動選號用,可以不要
-			int yourLotto[] = new int[6]; // 自動選號用,可以不要
-
-			int count = 0; // 自動選號用,可以拿掉
-			int num2 = 1; // 自動選號用,可以拿掉
-			while (num2 <= range) { // 自動選號用,可以拿掉
-				if ((num2 > 10) && (num2 / 10) == ban) {
-					num2++;
-				} else if ((num2 % 10) == ban) {
-					num2++;
-				} else {
-					conLottoArray[count] = num2;
-					num2++;
-					count += 1;
-				}
-			}
-
-			int r = (int)( Math.random() * conLottoNum)+1 ; // 自動選號用隨機生成數用,可以拿掉
-			System.out.println("測試訊息,目前的隨機數r=" + r); // 自動選號用隨機生成數用,可以拿掉
-			
-			System.out.print("自動選號的結果是:"); // 自動選號用隨機生成數用,可以拿掉
-
-			int chose = 0; //已經隨隨機選出數字的次數
-			while (chose < 6) { // 自動選號用,可以拿掉
-
-				for (int i = 0; i <= (conLottoNum - 1); i++) {
-					
-					if (r == conLottoArray[i] &&
-						r != yourLotto[0] &&
-						r != yourLotto[1] &&
-						r != yourLotto[2] &&
-						r != yourLotto[3] &&
-						r != yourLotto[4] &&
-						r != yourLotto[5])
-					{
-						yourLotto[i] = r;
-						System.out.print(yourLotto[i] + " ");
-						r = (int) (Math.random() * conLottoNum);
-						chose += 1;
-						i += 1;
-					}
-
-				}
-
-			}
-
+		
 		}
-	}
-
-	// (錯誤)第三題,排除樂透號碼隨機選號
-	public static void randomLottoNumberWithoutChose() {
-
-		// 問題:如果我不能改變array長度,則我要怎麼讓banNumber可以改變數量?
-		int banNumber = 0;
-		int yourLotto[] = new int[6];
-
-		int lotto[] = new int[49];
-		for (int i = 0; i <= (lotto.length - 1); i++) {
-			lotto[i] = i + 1;
-		}
-
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("請輸入一個介於1~49數字, 我將排除他後為你隨機選號");
-		banNumber = scanner.nextInt();
-
-		while (banNumber < 1 || banNumber > 49) {
-			System.out.println("你這號碼根本不在1~49之間, 再試個吧");
-		}
-
-		System.out.println("你不要的號碼是:" + banNumber);
-		scanner.close();
-
-		System.out.print("你的自動選號是:");
-
-		int i = 0;
-		while (i < yourLotto.length) {
-			int r;
-			r = (int) (Math.random() * lotto.length);
-
-			if (r != banNumber && r != yourLotto[0] && r != yourLotto[1] && r != yourLotto[2] && r != yourLotto[3]
-					&& r != yourLotto[4] && r != yourLotto[5]) {
-				yourLotto[i] = r;
-				System.out.print(yourLotto[i] + " ");
-				i += 1;
-			}
-
-		}
-
-	}
-
+		
+	}	
 }
+
+
