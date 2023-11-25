@@ -58,7 +58,7 @@ public class HW2_2 {
 		int product = 1;
 		while (num <=range) {
 			product =num *num;
-			System.out.print(product +"_");
+			System.out.print(product +" ");
 			num ++; 
 		}
 		System.out.println();
