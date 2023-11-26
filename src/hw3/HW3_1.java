@@ -13,8 +13,8 @@ public class HW3_1 {
 			//調用第二題_終極密碼(檢查OK
 //			HW3_2.isSecretNumber();
 
-			//調用第三題_樂透排除指定號碼後的隨機選號(檢查OK,目前尚不能自動選號
-			HW3_2.randomLottoNumberWithoutURNum();		
+			//調用第三題_樂透排除指定號碼後的隨機選號(檢查OK
+			HW3_2.randomLottoNumberWithoutURNum2();		
 	}
 		
 }

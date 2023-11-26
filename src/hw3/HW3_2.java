@@ -83,12 +83,11 @@ public class HW3_2 {
 		int range = 49;
 		int num = 1;
 		int ban = 0;
-
+		
 		System.out.println("請輸入1~9的一個數");
 		Scanner scanner = new Scanner(System.in);
 		ban = scanner.nextInt();
 		scanner.close();
-
 
 		if (ban > 9 || ban < 1) {
 			System.out.print(ban + ",這個數沒有介於1~9,重新執行一次吧");
@@ -105,10 +104,77 @@ public class HW3_2 {
 			}
 			System.out.println();
 			System.out.println("以上是不包含" + ban + "的樂透數字");
+			
+
+			
 		
 		}
 		
 	}	
-}
 
+    //第三題ex, 如果支援隨機選號(這個進階就直接重寫了, 順便改改原本的邏輯)
+	public static void randomLottoNumberWithoutURNum2() {
+		int[] canChooseNums = new int [49];
+		int ban = 2; //暫時寫死, 之後調整為自訂1~9
+		
+		System.out.println("請輸入1~9的一個數");
+		Scanner scanner = new Scanner(System.in);
+		ban = scanner.nextInt();
+		scanner.close();
+		
+		//判斷輸入值是否合法
+		if ( ban < 1 || ban > 9 ) {
+			System.out.println("這沒有介於1~9, 程式將關閉");
+			System.exit(0);
+		}
+		
+		System.out.println("排除你所選數" + ban + "後, 還有這些數字可選:");
+		//迴圈在CanChooseNums清單放入剩下的數, 順便打印
+		for ( int lottoNum = 1 ; lottoNum<canChooseNums.length ; lottoNum++) {
+			if (ban > 9 || ban < 1) {  //判斷ban是否符合條件
+				System.out.print(ban + ",這個數沒有介於1~9,重新執行一次吧");
+				System.exit(0);
+			} 
+			else 
+			{
+				
+				if (  (lottoNum > 10) && (lottoNum / 10) == ban) 
+				{  canChooseNums[lottoNum-1] = 0;  } 
+				else if ((lottoNum % 10) == ban)
+				{  canChooseNums[lottoNum-1] = 0;  } 
+				else 
+				{
+					System.out.print(lottoNum + ",");
+				    canChooseNums[lottoNum-1] = lottoNum;	}		
+			}
+		
+		}
+		
+		//迴圈抽取六個數
+		System.out.println("");
+		System.out.println("你的自動選號是:");
+		int[] yourNums = new int [6];
+		int yourNumsCount = 0;
+		
+		while (  yourNumsCount != yourNums.length  ) 
+		{
+			int randomNum = (int)(Math.random()*canChooseNums.length);
+			if (    (  canChooseNums[randomNum] != 0  )&&
+				    (  canChooseNums[randomNum] != yourNums[0]  )&&
+				    (  canChooseNums[randomNum] != yourNums[1]  )&&
+				    (  canChooseNums[randomNum] != yourNums[2]  )&&
+				    (  canChooseNums[randomNum] != yourNums[3]  )&&
+				    (  canChooseNums[randomNum] != yourNums[4]  )&&
+				    (  canChooseNums[randomNum] != yourNums[5]  )    ) 
+			    {
+					System.out.print( canChooseNums[randomNum]+" ");
+					yourNums[yourNumsCount] = canChooseNums[randomNum];
+					yourNumsCount += 1;
+			    }
+		}
+		
+		
+	}
+
+}
 
