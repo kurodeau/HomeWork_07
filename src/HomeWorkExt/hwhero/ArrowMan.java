@@ -1,3 +1,4 @@
+package HomeWorkExt.hwhero;
 
 public class ArrowMan extends Hero {
 	

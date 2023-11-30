@@ -2,8 +2,8 @@ package HomeWorkExt.hwpen;
 
 public abstract class Pen {
 	
-	String band;
-	double price;
+	private String band;
+	private double price;
 	
 	//宣告建構方法, 並予以多型輸入
 	public Pen(String band, double price) {
@@ -30,11 +30,11 @@ public abstract class Pen {
 			this.price = price;
 		}
 	}
-    public void getBand() {
-    	System.out.print("這個牌子是:" + band); 
+    public String getBand() {
+    	return band;
     }
-    public void getPrice() {
-    	System.out.print("這個價格是:" + price);
+    public double getPrice() {
+    	return price;
     }    
 	
     //設計抽象方法write
