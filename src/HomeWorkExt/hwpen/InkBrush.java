@@ -12,8 +12,9 @@ public class InkBrush extends Pen{
 
 	//override價格方法
 	@Override
-    public void getPrice() {
-    	System.out.println("price is:" + (price*0.8) );
+    public double getPrice() {
+    	System.out.println("price is:" + (super.getPrice() *0.8) );
+    	return super.getPrice();
 	}
 	
 	//實作抽方法write
