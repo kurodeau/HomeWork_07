@@ -21,8 +21,10 @@ public class HW5_1 {
 				};
 //		HW5_2.maxElement( array2 );
 		
-		//調用第四題_產生8碼隨機包含大小寫英文字母與數字0~9
-	    HW5_2.genAuthCode();
+		//調用第四題_這個另寫類別跟main 方法
+		
+		//調用第五題_產生8碼隨機包含大小寫英文字母與數字0~9
+//	    HW5_2.genAuthCode();
 
 		
 		
