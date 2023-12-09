@@ -84,7 +84,9 @@ public class HW5_2 {
 		
 	}
 
-    //第四題, 產生8位隨機驗證碼的方法
+	//第四題, 類別MyRectangle, 這個另寫類別跟main 方法:
+	
+    //第五題, 產生8位隨機驗證碼的方法
 	static public void genAuthCode(){
 		
 		//用萬國碼, 抓出英文字母大小寫的字元區間
