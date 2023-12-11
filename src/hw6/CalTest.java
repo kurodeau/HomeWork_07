@@ -6,32 +6,27 @@ public class CalTest {
 		
 	public static void main(String[] args){
 		
-		//使使用者可以自訂變數
-		int x, y;
+		//讓使用者可以自訂變數
+		int x = 0;
+		int y = 0;
+		
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("替您計算x 的y 次方");
+		System.out.println("請依序輸入x, y, 將會計算x 的y 次方");
 		System.out.println("請輸入x");
 		x = scanner.nextInt();
 		System.out.println("請輸入y");
 		y = scanner.nextInt();
-		scanner.close();
 		
-		
-		Calculator testArray = new Calculator(x, y);
-		
-		//以try, 呼叫testArray.powerXY()方法
-		try { testArray.powerXY(); }
-		catch( CalException a ){
-			System.out.println(public CalException("0的 0次方沒有意義...請重新輸入吧"));
-			//這裡要放輸入x, y 的code
-		}catch(  ) {
-			
+		Calculator c1 = new Calculator();
+		//try 調用setter方法, 判斷例外
+		try {
+			c1.setterxy(x, y);
+			System.out.print( c1.powerXY() );
 		}
-		
-		testArray.powerXY();
-		
-		
-		
+		catch (CalException c){
+			c.printStackTrace();
+		}
+		scanner.close();
 	}
 
 }
