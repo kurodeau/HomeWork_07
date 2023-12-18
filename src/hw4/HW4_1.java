@@ -32,7 +32,7 @@ public class HW4_1 {
 				{98, 70, 89, 90, 75, 90, 89, 90},
 				{90, 80, 100, 75, 50, 20, 99, 75}
 				};
-//		HW4_2.countHighestScore(array6);
+		HW4_2.countHighestScore(array6);
 	}
 	
 	

@@ -56,7 +56,7 @@ public class HW3_2 {
 		System.out.println("歡迎來到不猜中正確數字就不會結束的程式...");
 		System.out.println("請你隨意輸入介於1~100的整數, 直到猜到正確的密碼吧");
 
-		int secretNumber = (int) (Math.random() * 100);
+		int secretNumber = (int) (Math.random() * 100)+ 1;
 //		System.out.println("測試訊息, 密碼是:" + secretNumber);
 
 		int usernum = 0;
