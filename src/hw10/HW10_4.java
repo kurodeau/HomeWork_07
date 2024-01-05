@@ -7,7 +7,7 @@ public class HW10_4 {
 	
 	public static void dateType() {
 		
-		String checkInput = "^\\d{4}[01-12]{1}[01-31]{1}$";
+		String checkInput = "^\\d{4}[12]{1}[31]{1}$";
 		String checkType = "^['1''2''3']{1,1}";
 		boolean unCorrect = true;
 
@@ -15,8 +15,9 @@ public class HW10_4 {
 		
 		//do_while 判斷書輸入內容事由數字組成
 		String num;
+		Scanner sc = new Scanner(System.in);
+		num = sc.next();
 		do{
-			Scanner sc = new Scanner(System.in);
 			num = sc.next();
 			if ( num.matches(checkInput) ) {
 				unCorrect = false;
@@ -30,7 +31,6 @@ public class HW10_4 {
 		System.out.print("選擇以下列何種表示方法顯示(1)年/月/日(2)月/日/年(3)日/月/年");
 		String type = null;
 		do{
-			Scanner sc = new Scanner(System.in);
 			type = sc.next();
 			if ( type.matches(checkType) != true ) {
 				type = null;
@@ -42,13 +42,13 @@ public class HW10_4 {
 		int intNum = Integer.parseInt(num);
 		switch( intType ) {
 		case 1:
-			System.out.println(  intNum );
+			System.out.println( num.substring(0, 4)+ "/"+ num.substring(4, 6)+ "/"+ num.substring(6) );
 			break;
 		case 2:
-			System.out.println(  intNum );
+			System.out.println( num.substring(4, 6)+ "/"+ num.substring(6)+ "/"+ num.substring(0, 4) );
 			break;
 		case 3:		
-			System.out.println(  intNum );
+			System.out.println( num.substring(6)+ "/"+ num.substring(4, 6)+ "/"+ num.substring(0, 4) );
 			break;
 		}
 		
