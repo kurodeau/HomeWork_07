@@ -2,7 +2,6 @@ package hw8;
 
 import java.util.*;
 
-import module18_20.MyComparator;
 
 public class TestTrain {
 	
