@@ -16,6 +16,9 @@ public class HW9_2 {
 		Thread bMom = new Thread( bearMom );
 		bBig.start();
 		bMom.start();
+		while( bBig.isAlive() && bMom.isAlive() ) {};
+		bBig.stop();
+		bMom.stop();
 	};
 }
 
@@ -60,15 +63,6 @@ class BearAccount{
 			catch( InterruptedException e ){
 				e.printStackTrace();
 			}
-//			finally{
-//				System.out.println("進入finally");	
-//			};
-//			accountBalance += money;
-//			System.out.println( "    雄大他媽匯了 2000, 現在餘額有: " + accountBalance );
-//			if( accountBalance > 3000 ){
-//				System.out.println("帳戶餘額:" + accountBalance + "，通知可以領錢");
-//				notify();
-//			};
 		};
 		accountBalance += money;
 		System.out.println( "    雄大他媽匯了 2000, 現在餘額有: " + accountBalance );
